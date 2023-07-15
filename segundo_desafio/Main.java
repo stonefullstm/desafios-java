@@ -8,7 +8,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import java.util.StringTokenizer;
 
-public class Segundo {
+public class Main {
     
     public static void main(String[] args) throws IOException {
         
@@ -19,7 +19,7 @@ public class Segundo {
         DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.ROOT);
         symbols.setDecimalSeparator('.');
         symbols.setGroupingSeparator(',');
-        DecimalFormat df = new DecimalFormat("#.00", symbols);
+        DecimalFormat df = new DecimalFormat("#0.00", symbols);
 
         StringTokenizer st = new StringTokenizer(in.readLine(), ".");
         int inteiro = Integer.parseInt(st.nextToken());
@@ -41,7 +41,10 @@ public class Segundo {
           int valor_moeda = (int) (moeda * 100);
           int qtde_moedas = decimal / valor_moeda;
           decimal = decimal % valor_moeda;
-          sb.append(qtde_moedas + " moeda(s) de R$ " + moeda + "\n");
+          sb.append(qtde_moedas + " moeda(s) de R$ " + df.format(moeda));
+          if (moeda != 0.01) {
+            sb.append("\n");
+          }
         }
         System.out.println(sb.toString());
     }

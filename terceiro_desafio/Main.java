@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Terceiro {
+public class Main {
     public static void main(String[] args) throws IOException {
         
         InputStreamReader ir = new InputStreamReader(System.in);

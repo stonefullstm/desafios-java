@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Quarto {
+public class Main {
 
     public static StringBuffer inverte(char[] array) {
         StringBuffer sb = new StringBuffer("");
